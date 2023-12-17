@@ -1,0 +1,76 @@
+<form
+  (ngSubmit)="calcularMontanteFuturo()"
+  [formGroup]="meuFormulario"
+  class="container"
+>
+  <br>
+  <div class="portlet">
+    <div class="portle-header">
+      <h3>Calculadora de rendimentos </h3>
+    </div>
+    <hr>
+    <br>
+    <div class="portlet-body">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="row">
+            <div class="col-md-8 col-sm-8">
+              <label for="valorInicial"              >
+                <b>Valor inicial:</b>
+              </label>
+              <input
+                type="number"
+                [(ngModel)]="valorInicial"
+                formControlName="valorInicial"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-8 col-sm-8">
+              <label for="aporteMensal"><b>Aporte mensal: </b></label>
+              <input
+                type="number"
+                [(ngModel)]="aporteMensal"
+                formControlName="aporteMensal"
+                class="form-control"
+              >
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-8 col-sm-8">
+              <label for="taxaAnual"><b>Taxa de rendimento anual (%): </b></label>
+              <input
+                type="number"
+                [(ngModel)]="taxaAnual"
+                formControlName="taxaAnual"
+                class="form-control"
+              >
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-8 col-sm-8">
+              <label for="periodoMeses"><b>Período em meses:</b></label>
+              <input
+                type="number"
+                [(ngModel)]="periodoMeses"
+                formControlName="periodoMeses"
+                class="form-control"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <label for="montanteFuturo"><h4>Montante futuro:</h4> {{ montanteFuturo | currency: "R$ " }} </label>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="portlet-footer">
+      <button type="submit" class="btn btn-success">Calcular</button>
+    </div>
+  </div>
+</form>
